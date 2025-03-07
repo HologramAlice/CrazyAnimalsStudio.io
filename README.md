@@ -55,8 +55,8 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/your-username/indie-dev-team-site.git
-cd indie-dev-team-site
+git clone https://github.com/HologramAlice/Project_Apollo.git
+cd Project_Apollo
 ```
 
 2. Установите зависимости:
