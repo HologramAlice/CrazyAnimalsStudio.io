@@ -27,7 +27,7 @@ const Header = () => {
         <HeaderContent>
           <Logo>
             <Link to="/">
-              <span>INDIE</span>TEAM
+              <span>CRAZY</span>ANIMALS
             </Link>
           </Logo>
 

@@ -43,11 +43,11 @@ const HomePage = () => {
         <HeroSection>
           <div className="container">
             <HeroContent>
-              <HeroTitle>INDIE TEAM</HeroTitle>
-              <HeroSubtitle>Создаем игры, которые запомнятся</HeroSubtitle>
+              <HeroTitle>CRAZY ANIMALS STUDIO</HeroTitle>
+              <HeroSubtitle>Создаем миры, которые оживают</HeroSubtitle>
               <HeroText>
                 Мы - команда талантливых разработчиков, художников и дизайнеров, 
-                объединенных страстью к созданию уникальных игровых миров.
+                объединенных страстью к созданию уникальных игровых вселенных.
               </HeroText>
               <HeroButton to="/apply">Присоединиться к команде</HeroButton>
             </HeroContent>

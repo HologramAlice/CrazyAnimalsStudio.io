@@ -12,7 +12,7 @@ const Footer = () => {
         <FooterContent>
           <FooterLogo>
             <Link to="/">
-              <span>INDIE</span>TEAM
+              <span>CRAZY</span>ANIMALS
             </Link>
           </FooterLogo>
 
@@ -40,14 +40,14 @@ const Footer = () => {
             <SocialLink href="https://github.com" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </SocialLink>
-            <SocialLink href="mailto:contact@indieteam.com">
+            <SocialLink href="mailto:contact@crazyanimals.com">
               <FaEnvelope />
             </SocialLink>
           </FooterSocial>
         </FooterContent>
 
         <FooterBottom>
-          <p>&copy; {year} INDIE TEAM. Все права защищены.</p>
+          <p>&copy; {year} CRAZY ANIMALS STUDIO. Все права защищены.</p>
         </FooterBottom>
       </div>
     </FooterContainer>
