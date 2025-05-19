@@ -1,97 +1,57 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const cors = require('cors');
-const helmet = require('helmet');
 const path = require('path');
-// const connectDB = require('./config/db'); // Временно отключаем
-const rateLimit = require('express-rate-limit');
-const { errorHandler } = require('./middleware/errorMiddleware');
+const nodemailer = require('nodemailer');
 
 // Загрузка переменных окружения
 dotenv.config();
 
-// Подключение к базе данных
-// connectDB(); // Временно отключаем
-
 const app = express();
 
-// Настройка безопасности
-app.use(helmet());
-app.use(cors());
-
-// Ограничение запросов для защиты от DoS атак
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 минут
-  max: 100 // ограничение каждого IP до 100 запросов за windowMs
-});
-app.use('/api/', limiter);
-
-// Middleware для парсинга JSON и urlencoded данных
+// Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.static('client'));
 
-// Настройка статических файлов
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-// Маршруты API - временная заглушка для работы без MongoDB
-app.get('/api/content', (req, res) => {
-  res.json([
-    {
-      _id: '123',
-      section: 'hero',
-      title: 'CRAZY ANIMALS STUDIO',
-      subtitle: 'Создаем миры, которые оживают',
-      content: 'Мы - команда талантливых разработчиков, художников и дизайнеров, объединенных страстью к созданию уникальных игровых вселенных.',
-      buttonText: 'Присоединиться к команде',
-      buttonLink: '/apply',
-      order: 0,
-      isActive: true
+// Настройка транспорта для отправки email
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'crazy.studio.cat@gmail.com',
+        pass: process.env.EMAIL_PASSWORD
     }
-  ]);
 });
 
-// Остальные API маршруты с заглушками
-app.use('/api/auth', (req, res) => {
-  if (req.method === 'POST' && req.path === '/create-admin') {
-    return res.status(201).json({ message: 'Администратор создан' });
-  }
-  if (req.method === 'POST' && req.path === '/login') {
-    return res.json({
-      _id: '123',
-      name: 'Admin',
-      email: 'admin@example.com',
-      isAdmin: true,
-      token: 'fake_token_123'
-    });
-  }
-  res.status(404).json({ message: 'Endpoint не найден' });
+// API endpoint для обработки формы
+app.post('/api/join', async (req, res) => {
+    const { name, email, message } = req.body;
+
+    try {
+        await transporter.sendMail({
+            from: 'crazy.studio.cat@gmail.com',
+            to: 'crazy.studio.cat@gmail.com',
+            subject: 'Новая заявка на вступление в команду',
+            html: `
+                <h2>Новая заявка на вступление</h2>
+                <p><strong>Имя:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Сообщение:</strong></p>
+                <p>${message}</p>
+            `
+        });
+
+        res.status(200).json({ message: 'Заявка успешно отправлена' });
+    } catch (error) {
+        console.error('Error sending email:', error);
+        res.status(500).json({ message: 'Ошибка при отправке заявки' });
+    }
 });
 
-app.use('/api/applications', (req, res) => {
-  if (req.method === 'POST') {
-    return res.status(201).json({ message: 'Заявка успешно отправлена' });
-  }
-  res.json([]);
+// Обработка всех остальных маршрутов
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
 
-// Если в production, то статические файлы из build директории клиента
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')));
-
-  app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  );
-} else {
-  app.get('/', (req, res) => {
-    res.send('API работает. Для разработки запустите клиент отдельно.');
-  });
-}
-
-// Обработчик ошибок
-app.use(errorHandler);
-
-const PORT = process.env.PORT || 5000;
-
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Сервер запущен в ${process.env.NODE_ENV} режиме на порту ${PORT}`);
+    console.log(`Сервер запущен на порту ${PORT}`);
 }); 
