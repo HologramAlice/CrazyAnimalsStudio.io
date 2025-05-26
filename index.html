@@ -68,7 +68,7 @@
 
         <section class="join-form">
             <h2>Присоединяйтесь к нам</h2>
-            <form id="joinForm">
+            <form action="https://formspree.io/f/ВАШ_ENDPOINT" method="POST">
                 <div class="form-group">
                     <label for="name">Имя:</label>
                     <input type="text" id="name" name="name" required>
@@ -81,6 +81,7 @@
                     <label for="message">Почему вы хотите присоединиться к нам:</label>
                     <textarea id="message" name="message" required></textarea>
                 </div>
+                <input type="hidden" name="_subject" value="Заявка на вступление в команду">
                 <button type="submit">Отправить заявку</button>
             </form>
         </section>
