@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
-Sitemap: https://hologramalice.github.io/sitemap.xml
+Clean-param: from&utm_source&utm_medium&utm_campaign&utm_content&utm_term&pm_source&pm_block&pm_position
+
+User-agent: Yandex
+Allow: /
+Clean-param: from&utm_source&utm_medium&utm_campaign&utm_content&utm_term&pm_source&pm_block&pm_position
+
+Sitemap: https://hologramalice.github.io/CrazyAnimalsStudio.io/sitemap.xml
 
 # Разрешаем индексацию всех страниц
 Allow: /*.html
@@ -13,4 +19,6 @@ Disallow: /.git/
 Disallow: /.github/
 Disallow: /node_modules/
 Disallow: /.vscode/
-Disallow: /.idea/ 
+Disallow: /.idea/
+
+Host: https://hologramalice.github.io/CrazyAnimalsStudio.io 
