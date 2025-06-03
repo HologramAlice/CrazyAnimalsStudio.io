@@ -1,0 +1,343 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    color: #000;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Шапка */
+header {
+    background-color: #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid #000;
+    margin-bottom: 2rem;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Основной контент */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+/* ASCII Art */
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    text-align: center;
+    line-height: 1.2;
+    margin: 2rem 0;
+}
+
+/* Герой секция */
+.hero,
+.about-hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    margin-bottom: 6rem;
+    border: 1px solid #000;
+}
+
+.hero h1,
+.about-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Информация об игре */
+.game-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.game-description {
+    margin-bottom: 2rem;
+}
+
+.game-description h3 {
+    margin-bottom: 1.5rem;
+}
+
+.game-description p {
+    margin-bottom: 1rem;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border: 1px solid #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.screenshots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.screenshots img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #000;
+    transition: transform 0.3s ease;
+}
+
+.screenshots img:hover {
+    transform: scale(1.05);
+}
+
+/* О нас */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #000;
+}
+
+.about-text h2 {
+    margin: 2rem 0 1rem;
+    font-size: 1.8rem;
+}
+
+.about-text h2:first-child {
+    margin-top: 0;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+/* Ценности команды */
+.team-values {
+    padding: 2rem;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-item {
+    padding: 2rem;
+    border: 1px solid #000;
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-item i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.value-item h3 {
+    margin-bottom: 1rem;
+}
+
+/* Форма */
+.join-form {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem;
+    border: 1px solid #000;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #000;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background: #fff;
+    border: 1px solid #000;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Социальные сети */
+.social-links {
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 1px solid #000;
+    margin-top: 4rem;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.social-item:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.social-item i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #000;
+    margin-top: 4rem;
+}
+
+/* Заголовки секций */
+section h2 {
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .game-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    .hero,
+    .about-hero {
+        padding: 4rem 1rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Thank You Cat */
+.thank-you-cat {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cat-ascii {
+    font-family: monospace;
+    white-space: pre;
+    line-height: 1.2;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.thank-you-message {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+} 
