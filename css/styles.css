@@ -1,4 +1,4 @@
-/* Общие стили */
+/* Базовые стили */
 * {
     margin: 0;
     padding: 0;
@@ -10,17 +10,17 @@ body {
     line-height: 1.6;
     color: #000;
     background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Шапка */
 header {
     background-color: #fff;
     padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
     border-bottom: 1px solid #000;
+    margin-bottom: 2rem;
 }
 
 nav {
@@ -33,55 +33,39 @@ nav {
 }
 
 .logo {
-    color: #000;
     font-size: 1.5rem;
     font-weight: bold;
-    font-family: 'Courier New', monospace;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    gap: 2rem;
 }
 
-nav ul li {
-    margin-left: 2rem;
-}
-
-nav ul li a {
+nav a {
     color: #000;
     text-decoration: none;
-    transition: opacity 0.3s;
-    font-family: 'Courier New', monospace;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
-    opacity: 0.7;
+nav a:hover,
+nav a.active {
+    background-color: #000;
+    color: #fff;
 }
 
 /* Основной контент */
 main {
-    margin-top: 80px;
-    padding: 2rem;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-/* Секция hero */
-.hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: #000;
-    margin-bottom: 2rem;
-    font-family: 'Courier New', monospace;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: normal;
-}
-
-.hero p {
-    font-size: 1.2rem;
+section {
+    margin-bottom: 4rem;
 }
 
 /* ASCII Art */
@@ -89,43 +73,51 @@ main {
     font-family: monospace;
     white-space: pre;
     text-align: center;
-    margin: 2rem 0;
-    font-size: 0.8rem;
     line-height: 1.2;
+    margin: 2rem 0;
 }
 
-/* Информация об игре */
-.game-info {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+/* Герой секция */
+.hero,
+.about-hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    margin-bottom: 6rem;
     border: 1px solid #000;
 }
 
+.hero h1,
+.about-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Информация об игре */
 .game-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 3rem;
     margin-top: 2rem;
 }
 
 .game-description {
-    font-family: 'Courier New', monospace;
+    margin-bottom: 2rem;
 }
 
-.game-media {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.game-description h3 {
+    margin-bottom: 1.5rem;
+}
+
+.game-description p {
+    margin-bottom: 1rem;
 }
 
 .video-container {
-    aspect-ratio: 16/9;
-    background: #f0f0f0;
-    border: 1px solid #000;
     position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
     overflow: hidden;
-    width: 100%;
+    border: 1px solid #000;
 }
 
 .video-container iframe {
@@ -134,110 +126,28 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    border: none;
 }
 
 .screenshots {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-/* Форма заявки */
-.join-form {
-    max-width: 800px;
-    margin: 4rem auto;
-    padding: 2rem;
-    border: 1px solid #000;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #000;
-    background: #fff;
-    font-family: 'Courier New', monospace;
-    font-size: 1rem;
-}
-
-.form-group textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-button[type="submit"] {
-    background-color: #fff;
-    color: #000;
-    padding: 1rem 2rem;
-    border: 1px solid #000;
-    cursor: pointer;
-    font-size: 1rem;
-    font-family: 'Courier New', monospace;
-    transition: all 0.3s;
-}
-
-button[type="submit"]:hover {
-    background-color: #000;
-    color: #fff;
-}
-
-/* Социальные сети */
-.social-links {
-    max-width: 1200px;
-    margin: 4rem auto;
-    text-align: center;
-    border: 1px solid #000;
-    padding: 2rem;
-}
-
-.social-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.social-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #000;
-    padding: 1.5rem;
+.screenshots img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
     border: 1px solid #000;
-    transition: all 0.3s;
+    transition: transform 0.3s ease;
 }
 
-.social-item:hover {
-    background-color: #000;
-    color: #fff;
+.screenshots img:hover {
+    transform: scale(1.05);
 }
 
-.social-item i {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-/* Страница "О нас" */
-.about-hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: #000;
-    margin-bottom: 2rem;
-}
-
+/* О нас */
 .about-content {
     max-width: 800px;
     margin: 0 auto;
@@ -247,42 +157,187 @@ button[type="submit"]:hover {
 
 .about-text h2 {
     margin: 2rem 0 1rem;
-    color: #000;
-    font-weight: normal;
+    font-size: 1.8rem;
+}
+
+.about-text h2:first-child {
+    margin-top: 0;
 }
 
 .about-text p {
     margin-bottom: 1.5rem;
-    font-family: 'Courier New', monospace;
+}
+
+/* Ценности команды */
+.team-values {
+    padding: 2rem;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-item {
+    padding: 2rem;
+    border: 1px solid #000;
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-item i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.value-item h3 {
+    margin-bottom: 1rem;
+}
+
+/* Форма */
+.join-form {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem;
+    border: 1px solid #000;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #000;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background: #fff;
+    border: 1px solid #000;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Социальные сети */
+.social-links {
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 1px solid #000;
+    margin-top: 4rem;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.social-item:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.social-item i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 /* Подвал */
 footer {
-    background-color: #fff;
-    color: #000;
     text-align: center;
     padding: 2rem;
-    margin-top: 4rem;
     border-top: 1px solid #000;
-    font-family: 'Courier New', monospace;
+    margin-top: 4rem;
+}
+
+/* Заголовки секций */
+section h2 {
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
     .game-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     nav {
         flex-direction: column;
         text-align: center;
+        gap: 1.5rem;
     }
 
     nav ul {
         margin-top: 1rem;
     }
 
-    nav ul li {
-        margin: 0 1rem;
+    .hero,
+    .about-hero {
+        padding: 4rem 1rem;
     }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Thank You Cat */
+.thank-you-cat {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cat-ascii {
+    font-family: monospace;
+    white-space: pre;
+    line-height: 1.2;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.thank-you-message {
+    margin-top: 1rem;
+    font-size: 1.2rem;
 } 

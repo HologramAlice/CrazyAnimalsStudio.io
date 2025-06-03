@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hologramalice.github.io/Project_Apollo---WIP/sitemap.xml 
