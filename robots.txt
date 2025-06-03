@@ -1,3 +1,16 @@
 User-agent: *
 Allow: /
-Sitemap: https://hologramalice.github.io/Project_Apollo---WIP/sitemap.xml 
+Sitemap: https://hologramalice.github.io/CrazyAnimalsStudio.io/sitemap.xml
+
+# Разрешаем индексацию всех страниц
+Allow: /*.html
+Allow: /*.css
+Allow: /*.js
+Allow: /img/
+
+# Запрещаем индексацию служебных файлов
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /.vscode/
+Disallow: /.idea/ 
