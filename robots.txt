@@ -6,7 +6,7 @@ User-agent: Yandex
 Allow: /
 Clean-param: from&utm_source&utm_medium&utm_campaign&utm_content&utm_term&pm_source&pm_block&pm_position
 
-Sitemap: https://hologramalice.github.io/CrazyAnimalsStudio.io/sitemap.xml
+Sitemap: https://crazyanimalsstudio.space/sitemap.xml
 
 # Разрешаем индексацию всех страниц
 Allow: /*.html
@@ -21,4 +21,4 @@ Disallow: /node_modules/
 Disallow: /.vscode/
 Disallow: /.idea/
 
-Host: https://hologramalice.github.io/CrazyAnimalsStudio.io 
+Host: https://crazyanimalsstudio.space 
