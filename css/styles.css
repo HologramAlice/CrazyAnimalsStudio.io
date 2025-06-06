@@ -396,4 +396,127 @@ section h2 {
     html {
         font-size: 18px;
     }
+}
+
+/* Стили для страницы проектов */
+.projects-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.projects-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(60,60,60,0.06);
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.project-card:hover {
+    box-shadow: 0 8px 24px rgba(40,40,40,0.18);
+    transform: translateY(-4px) scale(1.02);
+}
+
+.project-card-image {
+    position: relative;
+    width: 100%;
+    height: 45%;
+    overflow: hidden;
+}
+
+.project-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-genre {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #222;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 0.2em 0.8em;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 2;
+    opacity: 0.92;
+}
+
+.project-card-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.1rem 1rem 0.7rem 1rem;
+}
+
+.project-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+
+.project-card-desc {
+    font-size: 0.98rem;
+    color: #555;
+    margin-bottom: 1.1rem;
+    flex: 1 1 auto;
+}
+
+.project-card-platforms {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.2rem;
+}
+
+.project-card .btn {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.45rem 1.1rem;
+    background: #222;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.project-card .btn:hover {
+    background: #444;
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-card {
+        aspect-ratio: unset;
+        min-height: 340px;
+    }
 } 
