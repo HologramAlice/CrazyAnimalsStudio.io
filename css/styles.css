@@ -266,6 +266,12 @@ section {
     margin-bottom: 1rem;
 }
 
+.values-grid .value-item:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 400px;
+}
+
 /* Форма */
 .join-form {
     max-width: 600px;
