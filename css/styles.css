@@ -20,7 +20,7 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 18px);
 }
 
 @media (max-width: 480px) {
@@ -38,6 +38,9 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
 }
 
 /* Шапка */
@@ -84,17 +87,33 @@ nav ul {
 }
 
 nav a {
-    color: var(--text-color);
+    color: #222;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: all 0.3s ease;
-    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.05rem;
+    font-weight: 400;
+    border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
+    position: relative;
+    background: none;
 }
 
-nav a:hover,
-nav a.active {
-    background-color: var(--text-color);
-    color: var(--bg-color);
+nav a.active, nav a:focus, nav a:hover {
+    font-weight: 700;
+    color: #111;
+    background: none;
+}
+
+nav a.active::after, nav a:focus::after, nav a:hover::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #111;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0.2rem;
 }
 
 /* Основной контент */
@@ -116,9 +135,11 @@ section {
     white-space: pre;
     text-align: center;
     line-height: 1.2;
-    margin: 2rem 0;
-    font-size: 0.8rem;
+    margin: clamp(1rem, 4vw, 2rem) 0;
+    font-size: clamp(0.6rem, 2vw, 1.1rem);
     overflow-x: auto;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Герой секция */
@@ -174,24 +195,50 @@ section {
     height: 100%;
 }
 
+.game-media {
+    width: 100%;
+}
+
 .screenshots {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .screenshots img {
     width: 100%;
+    max-width: 700px;
     height: auto;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: none;
     transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
 }
 
 @media (hover: hover) {
     .screenshots img:hover {
         transform: scale(1.05);
+    }
+}
+
+@media (max-width: 900px) {
+    .screenshots {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .screenshots img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .screenshots img {
+        max-width: 100%;
     }
 }
 
@@ -201,6 +248,7 @@ section {
     margin: 0 auto;
     padding: 2rem;
     border: 1px solid #000;
+    margin-bottom: 2.5rem;
 }
 
 .about-text h2 {
@@ -228,12 +276,20 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    align-items: stretch;
 }
 
 .value-item {
     padding: 2rem;
     border: 1px solid #000;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 220px;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .value-item:hover {
@@ -247,6 +303,12 @@ section {
 
 .value-item h3 {
     margin-bottom: 1rem;
+}
+
+.values-grid .value-item:last-child {
+    grid-column: auto;
+    justify-self: stretch;
+    max-width: none;
 }
 
 /* Форма */
@@ -396,4 +458,252 @@ section h2 {
     html {
         font-size: 18px;
     }
+}
+
+/* Стили для страницы проектов */
+.projects-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.projects-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    align-items: stretch;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #111;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+    min-height: 340px;
+    max-width: 370px;
+    margin: 0 auto;
+}
+
+.project-card:hover {
+    box-shadow: 0 8px 24px rgba(40,40,40,0.13);
+}
+
+.project-card-image {
+    position: relative;
+    width: 100%;
+    background: #ededed;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #ededed;
+}
+
+.project-card-image.no-image {
+    background: #ededed;
+}
+
+.project-card-image.no-image::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project-genre {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #222;
+    color: #fff;
+    font-size: 0.78rem;
+    padding: 0.18em 0.9em;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    opacity: 0.93;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.project-card-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1.1rem 1.1rem 0.7rem 1.1rem;
+    min-height: 140px;
+}
+
+.project-card-title {
+    font-size: 1.13rem;
+    font-weight: 700;
+    margin-bottom: 0.45rem;
+    color: #181818;
+    line-height: 1.2;
+}
+
+.project-card-desc {
+    font-size: 0.97rem;
+    color: #444;
+    margin-bottom: 1.1rem;
+    flex: 1 1 auto;
+    line-height: 1.5;
+    min-height: 38px;
+}
+
+.project-card-platforms {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.2rem;
+    margin-top: auto;
+}
+
+.project-card .btn {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-card {
+        min-height: 220px;
+        max-width: 100%;
+    }
+    .project-card-image {
+        height: 90px;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body, .project-card-title, .project-card-desc, .project-card-platforms {
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* Сетка PNG-носителей */
+.projects-media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem;
+    justify-items: center;
+}
+
+.project-media-link {
+    cursor: pointer;
+    transition: box-shadow 0.25s;
+}
+
+.project-media {
+    width: 260px;
+    height: 260px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: none !important;
+    transition: box-shadow 0.25s;
+    box-shadow: none !important;
+}
+
+.project-media-link:hover .project-media {
+    box-shadow: 0 8px 24px #111;
+}
+
+.project-media-link img {
+    transition: box-shadow 0.25s, filter 0.25s, transform 0.25s;
+}
+
+.project-media-link:hover img {
+    outline: none !important;
+    box-shadow: none !important;
+    filter: drop-shadow(0 0 0.5px #111) drop-shadow(0 0 8px #111);
+    transform: scale(1.06);
+}
+
+@media (max-width: 900px) {
+    .projects-media-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+    .project-media, .project-media-link {
+        width: 180px;
+        height: 180px;
+    }
+}
+@media (max-width: 600px) {
+    .projects-media-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .project-media, .project-media-link {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 900px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  .values-grid .value-item:last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-content, .team-values, .join-form {
+    padding: 1rem;
+  }
+  .hero, .about-hero {
+    padding: 2rem 0.5rem;
+  }
+  nav ul {
+    gap: 0.5rem;
+  }
+  .logo {
+    font-size: 1.1rem;
+  }
+  section h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+  .logo {
+    font-size: 0.9rem;
+  }
+}
+
+img {
+    border: none !important;
+}
+
+@media (max-width: 1200px) {
+  .game-content {
+    grid-template-columns: 1fr;
+  }
 } 
