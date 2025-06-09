@@ -65,6 +65,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    color: var(--text-color);
 }
 
 nav ul {
@@ -123,6 +124,8 @@ main {
     margin: 0 auto;
     padding: 0 var(--padding-x);
     width: 100%;
+    padding-top: 5rem;
+    background-color: transparent;
 }
 
 section {
@@ -140,6 +143,7 @@ section {
     overflow-x: auto;
     max-width: 100%;
     box-sizing: border-box;
+    color: var(--text-color);
 }
 
 /* Герой секция */
@@ -155,6 +159,7 @@ section {
 .about-hero h1 {
     font-size: clamp(2rem, 5vw, 2.5rem);
     margin-bottom: 2rem;
+    color: var(--text-color);
 }
 
 /* Информация об игре */
@@ -172,10 +177,12 @@ section {
 .game-description h3 {
     margin-bottom: 1.5rem;
     font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--text-color);
 }
 
 .game-description p {
     margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
 .video-container {
@@ -252,8 +259,10 @@ section {
 }
 
 .about-text h2 {
-    margin: 2rem 0 1rem;
+    color: var(--text-color);
     font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    text-align: center;
 }
 
 .about-text h2:first-child {
@@ -262,6 +271,7 @@ section {
 
 .about-text p {
     margin-bottom: 1.5rem;
+    color: var(--text-color);
 }
 
 /* Ценности команды */
@@ -269,6 +279,7 @@ section {
     padding: 2rem;
     border: 1px solid #000;
     text-align: center;
+    margin-top: 4rem;
 }
 
 .values-grid {
@@ -280,16 +291,12 @@ section {
 }
 
 .value-item {
-    padding: 2rem;
-    border: 1px solid #000;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 220px;
-    height: 100%;
-    box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
 }
 
 .value-item:hover {
@@ -298,17 +305,30 @@ section {
 
 .value-item i {
     font-size: 2.5rem;
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
 .value-item h3 {
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
 }
 
 .values-grid .value-item:last-child {
     grid-column: auto;
     justify-self: stretch;
     max-width: none;
+}
+
+@media (max-width: 900px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    .values-grid .value-item:last-child {
+        grid-column: auto;
+        max-width: 100%;
+    }
 }
 
 /* Форма */
@@ -326,6 +346,8 @@ section {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: bold;
 }
 
 .form-group input,
@@ -333,22 +355,26 @@ section {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid var(--border-color);
-    font-family: inherit;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 4px;
     font-size: 1rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.form-group textarea {
-    min-height: 150px;
-    resize: vertical;
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #555;
 }
 
 button[type="submit"] {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    background-color: #333;
+    color: #fff;
     padding: 0.8rem 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
     cursor: pointer;
-    font-family: inherit;
     font-size: 1rem;
     transition: all 0.3s ease;
 }
@@ -356,6 +382,7 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: var(--text-color);
     color: var(--bg-color);
+    transform: translateY(-2px);
 }
 
 /* Социальные сети */
@@ -393,14 +420,23 @@ button[type="submit"]:hover {
 
 .social-item i {
     font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
 }
 
 /* Подвал */
 footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
     text-align: center;
     padding: 2rem var(--padding-x);
     border-top: 1px solid var(--border-color);
     margin-top: auto;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
 }
 
 /* Заголовки секций */
@@ -420,13 +456,16 @@ section h2 {
 .cat-ascii {
     font-family: monospace;
     white-space: pre;
+    line-height: 1;
     margin-bottom: 1rem;
+    color: var(--text-color);
     font-size: 0.8rem;
 }
 
 .thank-you-message {
     font-size: 1.2rem;
     color: var(--text-color);
+    font-weight: bold;
 }
 
 /* Дополнительные медиа-запросы для очень маленьких экранов */
@@ -458,6 +497,27 @@ section h2 {
     html {
         font-size: 18px;
     }
+}
+
+/* Общие стили для изображений */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+}
+
+/* Для галереи DESKET */
+.desket-hero-img {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    max-width: 80%;
+    height: auto;
+    width: 25%;
+    border-radius: 12px;
+}
+
+.desket-hero-img:hover {
 }
 
 /* Стили для страницы проектов */
@@ -627,13 +687,12 @@ body, .project-card-title, .project-card-desc, .project-card-platforms {
 }
 
 .project-media {
-    width: 220px;
-    height: 220px;
-    object-fit: contain;
+    max-width: 100%;
+    height: auto;
     border-radius: 16px;
-    background: none !important;
-    transition: box-shadow 0.25s, filter 0.25s, transform 0.25s;
-    box-shadow: none !important;
+    background: none;
+    transition: box-shadow 0.25s, transform 0.25s;
+    box-shadow: none;
     display: block;
 }
 
@@ -687,10 +746,6 @@ body, .project-card-title, .project-card-desc, .project-card-platforms {
   }
 }
 
-img {
-    border: none !important;
-}
-
 @media (max-width: 1200px) {
   .game-content {
     grid-template-columns: 1fr;
@@ -700,8 +755,10 @@ img {
 .desket-hero-img {
     display: block;
     margin: 0 auto 1.5rem auto;
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
+    width: 25%;
+    width: 18%;
     border-radius: 12px;
 }
 
@@ -741,7 +798,7 @@ img {
     height: 260px;
     object-fit: contain;
     border-radius: 16px;
-    background: none !important;
+    background: none;
     transition: box-shadow 0.25s;
-    box-shadow: none !important;
+    box-shadow: none;
 } 
