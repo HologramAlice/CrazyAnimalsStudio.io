@@ -20,7 +20,7 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 18px);
 }
 
 @media (max-width: 480px) {
@@ -38,6 +38,9 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
 }
 
 /* Шапка */
@@ -609,4 +612,41 @@ body, .project-card-title, .project-card-desc, .project-card-platforms {
         width: 120px;
         height: 120px;
     }
+}
+
+@media (max-width: 900px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  .values-grid .value-item:last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-content, .team-values, .join-form {
+    padding: 1rem;
+  }
+  .hero, .about-hero {
+    padding: 2rem 0.5rem;
+  }
+  nav ul {
+    gap: 0.5rem;
+  }
+  .logo {
+    font-size: 1.1rem;
+  }
+  section h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+  .logo {
+    font-size: 0.9rem;
+  }
 } 
