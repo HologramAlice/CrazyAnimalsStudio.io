@@ -135,9 +135,11 @@ section {
     white-space: pre;
     text-align: center;
     line-height: 1.2;
-    margin: 2rem 0;
-    font-size: 0.8rem;
+    margin: clamp(1rem, 4vw, 2rem) 0;
+    font-size: clamp(0.6rem, 2vw, 1.1rem);
     overflow-x: auto;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Герой секция */
