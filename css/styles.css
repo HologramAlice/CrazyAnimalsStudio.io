@@ -306,9 +306,9 @@ section {
 }
 
 .values-grid .value-item:last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-    max-width: 400px;
+    grid-column: auto;
+    justify-self: stretch;
+    max-width: none;
 }
 
 /* Форма */
