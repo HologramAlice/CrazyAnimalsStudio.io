@@ -603,61 +603,50 @@ body, .project-card-title, .project-card-desc, .project-card-platforms {
 
 /* Сетка PNG-носителей */
 .projects-media-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2.5rem;
-    padding: 1rem;
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+}
+
+.projects-media-grid.single-center {
+    justify-content: center;
 }
 
 .project-media-link {
-    cursor: pointer;
-    transition: box-shadow 0.25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.project-media-link:hover {
+    transform: scale(1.04);
 }
 
 .project-media {
-    width: 260px;
-    height: 260px;
+    width: 220px;
+    height: 220px;
     object-fit: contain;
     border-radius: 16px;
     background: none !important;
-    transition: box-shadow 0.25s;
-    box-shadow: none !important;
-}
-
-.project-media-link:hover .project-media {
-    box-shadow: 0 8px 24px #111;
-}
-
-.project-media-link img {
     transition: box-shadow 0.25s, filter 0.25s, transform 0.25s;
-}
-
-.project-media-link:hover img {
-    outline: none !important;
     box-shadow: none !important;
-    filter: drop-shadow(0 0 0.5px #111) drop-shadow(0 0 8px #111);
-    transform: scale(1.06);
+    display: block;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
     .projects-media-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
+        flex-direction: column;
+        gap: 2rem;
     }
-    .project-media, .project-media-link {
-        width: 180px;
-        height: 180px;
-    }
-}
-@media (max-width: 600px) {
-    .projects-media-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    .project-media, .project-media-link {
-        width: 120px;
-        height: 120px;
+    .project-media {
+        width: 90vw;
+        max-width: 320px;
+        height: auto;
+        margin: 0 auto;
     }
 }
 
