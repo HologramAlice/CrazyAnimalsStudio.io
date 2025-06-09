@@ -630,14 +630,14 @@ body, .project-card-title, .project-card-desc, .project-card-platforms {
 }
 
 .project-media-link img {
-    transition: box-shadow 0.25s;
-    background: none !important;
+    transition: box-shadow 0.25s, filter 0.25s, transform 0.25s;
 }
 
 .project-media-link:hover img {
     outline: none !important;
     box-shadow: none !important;
     filter: drop-shadow(0 0 0.5px #111) drop-shadow(0 0 8px #111);
+    transform: scale(1.06);
 }
 
 @media (max-width: 900px) {
