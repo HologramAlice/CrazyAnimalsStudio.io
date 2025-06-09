@@ -620,13 +620,24 @@ body, .project-card-title, .project-card-desc, .project-card-platforms {
     height: 260px;
     object-fit: contain;
     border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(60,60,60,0.08);
-    background: #ffffff;
+    background: none !important;
     transition: box-shadow 0.25s;
+    box-shadow: none !important;
 }
 
 .project-media-link:hover .project-media {
     box-shadow: 0 8px 24px #111;
+}
+
+.project-media-link img {
+    transition: box-shadow 0.25s;
+    background: none !important;
+}
+
+.project-media-link:hover img {
+    outline: none !important;
+    box-shadow: none !important;
+    filter: drop-shadow(0 0 0.5px #111) drop-shadow(0 0 8px #111);
 }
 
 @media (max-width: 900px) {
