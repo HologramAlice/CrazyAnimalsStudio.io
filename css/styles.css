@@ -250,12 +250,20 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    align-items: stretch;
 }
 
 .value-item {
     padding: 2rem;
     border: 1px solid #000;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 220px;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .value-item:hover {
