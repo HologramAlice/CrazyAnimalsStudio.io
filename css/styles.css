@@ -206,7 +206,7 @@ section {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: none;
     transition: transform 0.3s ease;
 }
 
@@ -659,4 +659,8 @@ body, .project-card-title, .project-card-desc, .project-card-platforms {
   .logo {
     font-size: 0.9rem;
   }
+}
+
+img {
+    border: none !important;
 } 
