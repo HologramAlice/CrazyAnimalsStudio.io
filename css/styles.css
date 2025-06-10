@@ -410,15 +410,14 @@ button[type="submit"]:hover {
     gap: 1rem;
 }
 
-@media (hover: hover) {
-    .social-item:hover {
-        background-color: var(--text-color);
-        color: var(--bg-color);
-        transform: translateY(-5px);
-    }
-    .social-item:hover i {
-        color: var(--bg-color);
-    }
+.social-item:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-5px);
+}
+
+.social-item:hover i {
+    color: var(--bg-color);
 }
 
 .social-item i {
