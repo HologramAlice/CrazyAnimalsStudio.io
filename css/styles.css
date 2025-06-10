@@ -416,12 +416,16 @@ button[type="submit"]:hover {
         color: var(--bg-color);
         transform: translateY(-5px);
     }
+    .social-item:hover i {
+        color: var(--bg-color);
+    }
 }
 
 .social-item i {
     font-size: 2rem;
     margin-bottom: 0.8rem;
     color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 /* Подвал */
