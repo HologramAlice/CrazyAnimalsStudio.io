@@ -12,4 +12,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://crazyanimalsstudio.space/pages/Projects_all.html</loc>
+        <lastmod>2025-05-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://crazyanimalsstudio.space/pages/not%20done%20yet.html</loc>
+        <lastmod>2025-05-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
 </urlset> 
