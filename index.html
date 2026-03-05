@@ -41,6 +41,7 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Structured data JSON-LD -->
@@ -66,13 +67,6 @@
     }
     </script>
 
-    <!-- Simple script for load check -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.body.style.opacity = '1';
-        });
-    </script>
-
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -90,7 +84,7 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/102756969" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 </head>
-<body style="opacity: 0; transition: opacity 0.5s ease;">
+<body>
     <header>
         <nav>
             <a href="index.html">
@@ -101,7 +95,7 @@
             <ul>
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="about.html">О нас</a></li>
-                <li><a href="pages/Projects_all.html">Проекты</a></li>
+                <li><a href="projects_all.html">Проекты</a></li>
             </ul>
         </nav> 
     </header>
@@ -139,16 +133,7 @@
 
         <section class="join-form">
             <h2>Присоединяйтесь к нам</h2>
-            <div class="thank-you-cat" style="display: none;">
-                <pre class="cat-ascii">
-  /\___/\
- (  o o  )
- (  =^=  ) 
-  (--m--)
-</pre>
-                <p class="thank-you-message">Спасибо за заявку! Мяу! ♥</p>
-            </div>
-            <form action="https://formspree.io/f/mnnvqkpe" method="POST" id="contactForm">
+            <form action="https://formspree.io/f/mnnvqkpe" method="POST">
                 <div class="form-group">
                     <label for="name">Имя:</label>
                     <input type="text" id="name" name="name" required>
@@ -162,6 +147,7 @@
                     <textarea id="message" name="message" required></textarea>
                 </div>
                 <input type="hidden" name="_subject" value="Заявка на вступление в команду">
+                <input type="hidden" name="_next" value="https://crazyanimalsstudio.space/index.html">
                 <button type="submit" class="submit-btn">Отправить заявку</button>
             </form>
         </section>
