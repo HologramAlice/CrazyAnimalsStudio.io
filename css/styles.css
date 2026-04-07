@@ -682,11 +682,6 @@ body, .project-card-title, .project-card-desc, .project-card-platforms {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.2s;
-}
-
-.project-media-link:hover {
-    transform: scale(1.04);
 }
 
 .project-media {
@@ -694,7 +689,6 @@ body, .project-card-title, .project-card-desc, .project-card-platforms {
     height: auto;
     border-radius: 16px;
     background: none;
-    transition: box-shadow 0.25s, transform 0.25s;
     box-shadow: none;
     display: block;
 }
@@ -772,12 +766,13 @@ body, .project-card-title, .project-card-desc, .project-card-platforms {
 .projects-section-title {
     font-size: 2rem;
     margin-bottom: 1.2rem;
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 1px;
     padding-left: 0.2em;
     color: #000;
     text-align: left;
-    font-family: 'Beast';
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
 }
 .projects-section-title.done {
     color: #343434;
