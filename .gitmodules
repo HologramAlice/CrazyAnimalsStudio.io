@@ -1,0 +1,3 @@
+[submodule "bgd"]
+	path = bgd
+	url = https://github.com/ik4rcat/-BGD_Library_site
