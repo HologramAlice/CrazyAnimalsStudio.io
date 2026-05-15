@@ -2,26 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://crazyanimalsstudio.space/</loc>
-        <lastmod>2025-05-19</lastmod>
-        <changefreq>daily</changefreq>
+        <lastmod>2026-05-15</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-    <url>
-        <loc>https://crazyanimalsstudio.space/about.html</loc>
-        <lastmod>2025-05-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://crazyanimalsstudio.space/pages/Projects_all.html</loc>
-        <lastmod>2025-05-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://crazyanimalsstudio.space/pages/not%20done%20yet.html</loc>
-        <lastmod>2025-05-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-</urlset> 
+</urlset>

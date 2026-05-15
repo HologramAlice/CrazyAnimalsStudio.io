@@ -1,187 +1,521 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Verification -->
+
+    <!-- ─── Verification ──────────────────────── -->
     <meta name="yandex-verification" content="7a8b8e7beaadb155" />
     <meta name="google-site-verification" content="YRYXhuTqiTE7CR_DWWoEkwobsuxGEl" />
-    
-    <!-- SEO meta tags -->
-    <title>Crazy Animals Studio - Инди-разработка игр</title>
-    <meta name="description" content="Crazy Animals Studio - независимая студия разработки игр." />
-    <meta name="keywords" content="Crazy Animals Studio, DESKET, инди игры, pixel art, horror games, ретро игры, gamedev, разработка игр, indie game studio, pixel horror, indie games, хоррор игры, пиксельные игры" />
-    
-    <!-- Additional meta tags -->
+
+    <!-- ─── SEO ───────────────────────────────── -->
+    <title>Crazy Animals Studio — Indie Game Dev · SPB</title>
+    <meta name="description" content="Crazy Animals Studio — independent indie game development studio from Saint Petersburg. Working on NO_FUTURE and other projects. Unity 6 · pixel art · low-poly 3D." />
+    <meta name="keywords" content="Crazy Animals Studio, CAS, indie game studio, NO_FUTURE, DESKET, инди игры, pixel art, gamedev, разработка игр, indie game development, Unity 6, Saint Petersburg, Санкт-Петербург, инди студия" />
     <meta name="author" content="Crazy Animals Studio" />
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="Russian" />
-    <meta http-equiv="Content-Language" content="ru" />
-    
-    <!-- Open Graph -->
+
+    <!-- ─── Open Graph ────────────────────────── -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Crazy Animals Studio" />
-    <meta property="og:title" content="Crazy Animals Studio - Разработка Инди-Игр" />
-    <meta property="og:description" content="Независимая студия разработки игр." />
+    <meta property="og:title" content="Crazy Animals Studio — Indie Game Dev · SPB" />
+    <meta property="og:description" content="Independent indie game studio from Saint Petersburg. NO_FUTURE and more. No investors — our pace, our way." />
     <meta property="og:url" content="https://crazyanimalsstudio.space/" />
-    <meta property="og:locale" content="ru_RU" />
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://crazyanimalsstudio.space/" />
-    
-    <!-- Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    
-    <!-- Preload important resources -->
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/animations.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta property="og:image" content="https://crazyanimalsstudio.space/img/logo.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ru_RU" />
 
-    <!-- Structured data JSON-LD -->
+    <!-- ─── Twitter Card ─────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Crazy Animals Studio — Indie Game Dev" />
+    <meta name="twitter:description" content="Independent indie game studio from Saint Petersburg. No investors — our pace." />
+    <meta name="twitter:image" content="https://crazyanimalsstudio.space/img/logo.jpg" />
+
+    <!-- ─── Canonical ────────────────────────── -->
+    <link rel="canonical" href="https://crazyanimalsstudio.space/" />
+
+    <!-- ─── Favicon ───────────────────────────── -->
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg" />
+
+    <!-- ─── Fonts ────────────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- ─── Styles ───────────────────────────── -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ─── Structured Data (JSON-LD) ────────── -->
     <script type="application/ld+json">
     {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Crazy Animals Studio",
-        "description": "Независимая студия разработки инди игр",
+        "alternateName": "CAS",
+        "description": "Independent indie game development studio from Saint Petersburg, Russia",
         "url": "https://crazyanimalsstudio.space/",
-        "logo": "img/logo.jpg",
+        "logo": "https://crazyanimalsstudio.space/img/logo.jpg",
+        "image": "https://crazyanimalsstudio.space/img/logo.jpg",
+        "foundingDate": "2024",
+        "foundingLocation": {
+            "@type": "Place",
+            "name": "Saint Petersburg, Russia"
+        },
         "sameAs": [
-            "https://github.com/HologramAlice",
+            "https://github.com/CrazyAnimalsStudio",
             "https://dtf.ru/u/528485-crazy-animals-studio",
             "https://www.youtube.com/@crazyAnimalsStudio",
             "https://t.me/CrazyAnimalsStudio"
         ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "Crazy.studio.cat@gmail.com",
-            "contactType": "customer service"
-        }
+        "knowsAbout": ["indie game development", "Unity 6", "pixel art", "low-poly 3D", "game design"]
     }
     </script>
 
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-       ym(102756969, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true
-       });
+    <!-- ─── Google Analytics 4 ───────────────────────────────────────────
+         TODO: замени G-XXXXXXXXXX на твой GA4 Measurement ID
+         Создать: https://analytics.google.com/ → Admin → Create property
+    ──────────────────────────────────────────────────────────────────────
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/102756969" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+    -->
+
+    <!-- ─── Yandex Metrika ───────────────────────────────────────────────
+         TODO: замени XXXXXXXX на номер счётчика Метрики
+         Создать: https://metrika.yandex.ru/ → Добавить счётчик
+    ──────────────────────────────────────────────────────────────────────
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(XXXXXXXX, "init", {
+            clickmap:   true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor:   true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    -->
+
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">
-                <div class="logo">
-                    Crazy Animals Studio
-                </div>
-            </a>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="projects_all.html">Проекты</a></li>
-            </ul>
-        </nav> 
-    </header>
 
-    <main>
-        <section class="hero">
-            <img src="img/logo.jpg" alt="Desket city" class="desket-hero-img" width="7%">
-            <h1>Crazy Animals Studio</h1>
-            <p>Команда инди-разработчиков</p>
-        </section>
-
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/qP0dKUX5OBs?si=DVyhtKFj4g8jcU2K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<!-- NAV -->
+<nav>
+    <a href="#" class="nav-logo">
+        <span class="nav-logo-dot"></span>
+        CAS
+    </a>
+    <ul class="nav-links">
+        <li><a href="#projects" data-i18n="nav-projects">Projects</a></li>
+        <li><a href="#about" data-i18n="nav-about">About</a></li>
+    </ul>
+    <div class="nav-right">
+        <div class="nav-lang">
+            <button class="lang-btn" data-lang="ru" onclick="setLang('ru')">RU</button>
+            <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
         </div>
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme">◐</button>
+        <a href="#join" class="nav-cta" data-i18n="nav-join">Join</a>
+    </div>
+</nav>
 
-        <section class="game-info">
-            <h2>Наши основные проекты</h2>
-            <div class="game-content">
-                <div class="game-description">
-                    <img src="img/projects/desket/desketLogo.png" alt="Desket-logo" style="width:30%;border-radius:8px;">
-                    <h3>
-                        DESKET <br> 
-                        the game
-                    </h3>
-                    <p>2D cyberpunk action horror </p>
-                    <p>Status: work in progress</p>
-                </div>
-                <div class="game-media">
-                    <div class="screenshots">
-                        <img src="img/projects/desket/DesketConcept.jpg" alt="Desket-city-pixel-art" style="width:100%;border-radius:8px;">
+<!-- HERO -->
+<section class="hero">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; width:100%; gap:40px; flex-wrap:wrap; position:relative; z-index:1;">
+        <div style="flex:1; min-width:300px;">
+            <div class="hero-tag" data-i18n="hero-tag">CAS_v1 · SPB · EST. 2024</div>
+            <h1>Crazy<br><span>Animals</span><br>Studio</h1>
+            <p class="hero-sub" data-i18n="hero-sub">Indie gamedev from Saint Petersburg.</p>
+            <p style="font-family:var(--mono); font-size:10px; color:var(--text-3); letter-spacing:0.18em; margin-top:6px;">狂った動物たちが未来を作る</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn-primary" data-i18n="hero-btn-projects">// Projects</a>
+                <a href="https://t.me/CrazyAnimalsStudio" target="_blank" class="btn-secondary">Telegram ↗</a>
+            </div>
+        </div>
+        <div class="hero-logo-block">
+            <img src="img/logo.jpg" alt="CAS Logo" class="hero-logo-img">
+            <div class="hero-logo-caption">© 2026 CRAZY ANIMALS STUDIO</div>
+        </div>
+    </div>
+    <div class="hero-scroll">↓↓ SCROLL ↓↓↓</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+    <div class="marquee-track">
+        <div class="marquee-content">
+            <span class="marquee-item">NO_FUTURE</span>
+            <span class="marquee-item">ゲーム開発</span>
+            <span class="marquee-item">BLOOD_CANDY_UNIVERSE</span>
+            <span class="marquee-item" data-i18n="marquee-city">SPB · Russia</span>
+            <span class="marquee-item">UNITY_6000.3.5f2</span>
+            <span class="marquee-item">狂った動物</span>
+            <span class="marquee-item">PIXEL_ART</span>
+            <span class="marquee-item" data-i18n="marquee-indie">indie-gamedev</span>
+            <span class="marquee-item">HARD_CORE</span>
+            <span class="marquee-item">未来を作る</span>
+            <span class="marquee-item">INDIE · NO_INVESTORS</span>
+            <span class="marquee-item">物語</span>
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+            <span class="marquee-item">NO_FUTURE</span>
+            <span class="marquee-item">ゲーム開発</span>
+            <span class="marquee-item">BLOOD_CANDY_UNIVERSE</span>
+            <span class="marquee-item" data-i18n="marquee-city">SPB · Russia</span>
+            <span class="marquee-item">UNITY_6000.3.5f2</span>
+            <span class="marquee-item">狂った動物</span>
+            <span class="marquee-item">PIXEL_ART</span>
+            <span class="marquee-item" data-i18n="marquee-indie">indie-gamedev</span>
+            <span class="marquee-item">HARD_CORE</span>
+            <span class="marquee-item">未来を作る</span>
+            <span class="marquee-item">INDIE · NO_INVESTORS</span>
+            <span class="marquee-item">物語</span>
+        </div>
+    </div>
+</div>
+
+<!-- CURRENT BUILD: NO_FUTURE -->
+<section class="section" id="projects">
+    <div class="section-tag" data-i18n="tag-current-build">// 製作中 · current build</div>
+    <div class="featured">
+        <div class="featured-info">
+            <div class="featured-badge" style="background:var(--accent); color:#fff; border-color:var(--accent);" data-i18n="active-badge">● 開発中 · ACTIVE</div>
+            <div class="featured-name" style="font-size: clamp(48px,7vw,96px);">NO_FUTURE</div>
+            <div class="featured-sub" style="font-family:var(--mono); font-size:12px; letter-spacing:0.1em;">
+                ENGINE: Unity 6 6000.3.5f2 LTS &nbsp;·&nbsp; BUILD: 202X
+            </div>
+            <div class="featured-tags" style="margin-top: 20px;">
+                <span class="tag" data-i18n="tag-thoughts">thoughts</span>
+                <span class="tag">interactive cinema</span>
+                <span class="tag">LOW-POLY 3D</span>
+            </div>
+            <div style="margin-top: 32px; display:flex; gap:12px; flex-wrap:wrap;">
+                <a href="https://t.me/CrazyAnimalsStudio" target="_blank" class="btn-primary" data-i18n="btn-follow">follow ↗</a>
+            </div>
+        </div>
+        <div class="featured-img-wrap" style="background:#0d1117; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; font-family:var(--mono); color:rgba(26,92,255,0.6); font-size:13px; letter-spacing:0.08em;">
+            <div style="color:var(--accent); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; opacity:0.5;">no_future.exe · no_future.appimage</div>
+            <div style="font-size:clamp(48px,6vw,80px); font-weight:900; color:var(--lime); letter-spacing:-0.04em; line-height:1; font-family:var(--sans);">NO<br>FUTURE</div>
+            <div style="font-size:10px; color:rgba(255,255,255,0.2); letter-spacing:0.15em; margin-top:8px;" data-i18n="art-not-ready-featured">// art not ready yet</div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<div class="section" id="about" style="padding-bottom:0;">
+    <div class="section-tag" data-i18n="tag-about">// スタジオ · about</div>
+    <h2 class="section-title">CAS</h2>
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-num">0<span></span></div>
+            <div class="stat-label" data-i18n="stat-games">games released</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num" data-i18n="stat-many">a lot</div>
+            <div class="stat-label" data-i18n="stat-ideas">ideas</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">10<span>+</span></div>
+            <div class="stat-label" data-i18n="stat-members">members</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num" style="font-size:32px; letter-spacing:-0.01em;">Unity<span> 6000.3.5f2</span></div>
+            <div class="stat-label" data-i18n="stat-engine">engine</div>
+        </div>
+    </div>
+</div>
+
+<!-- ROLES -->
+<section class="roles-section">
+    <div class="roles-header">
+        <h2>Crazy Animals Studio</h2>
+        <p style="font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">// indie · spb · est_2024 · no_investors</p>
+        <p style="font-family:var(--mono); font-size:10px; letter-spacing:0.15em; color:var(--text-3); margin-top:6px;" data-i18n="roles-sub">自分たちのペースで · at our own pace</p>
+    </div>
+    <div class="roles-cloud">
+        <span class="role-bubble" data-i18n="role-dev">Development</span>
+        <span class="role-bubble">Programming</span>
+        <span class="role-bubble">3D low-poly</span>
+        <span class="role-bubble" data-i18n="role-narrative">Narrative</span>
+        <span class="role-bubble">hand-made sites</span>
+        <span class="role-bubble">Game Design</span>
+        <span class="role-bubble" data-i18n="role-sound">Sound</span>
+        <span class="role-bubble">pixel-art</span>
+        <span class="role-bubble" data-i18n="role-writing">Screenwriting</span>
+    </div>
+</section>
+
+<!-- ALL PROJECTS — media shelf -->
+<section class="section">
+    <div class="section-tag" data-i18n="tag-all-projects">// 全プロジェクト · all projects</div>
+    <h2 class="section-title">Build Queue</h2>
+
+    <!-- ACTIVE -->
+    <div style="margin-bottom:56px;">
+        <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.15em; color:var(--accent); font-weight:700; margin-bottom:24px; display:flex; align-items:center; gap:10px;">
+            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--accent); animation: pulseDot 1.5s ease-in-out infinite;"></span>
+            <span data-i18n="status-active">開発中 · IN DEVELOPMENT</span>
+        </div>
+        <div class="media-shelf">
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <div class="media-text-card" style="background:#0a0a10; border:1px solid rgba(200,214,43,0.2);">
+                        <div class="tc-label" style="color:rgba(200,214,43,0.4);">NO_FUTURE.exe</div>
+                        <div class="tc-title" style="color:var(--lime);">NO<br>FUTURE</div>
+                        <div class="tc-sub" data-i18n="art-pending">// art not ready · 未定</div>
                     </div>
                 </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">NO_FUTURE</div>
+                    <div class="media-card-status" style="background:var(--accent); color:#fff; border-radius:999px; font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; padding:3px 10px;" data-i18n="badge-active">ACTIVE</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- IDEAS -->
+    <div>
+        <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.15em; color:var(--text-3); font-weight:700; margin-bottom:24px; display:flex; align-items:center; gap:10px;">
+            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--bg-3); border:1px solid var(--border-2);"></span>
+            <span data-i18n="status-ideas">アイデア · IDEAS</span>
+        </div>
+        <div class="media-shelf">
+            <!-- DESKET -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <img src="img/projects/desket/desketLogo.png" alt="DESKET">
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">DESKET</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+            <!-- DEER_WITH_BEER -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <img src="img/projects/deerWithBeer/deerWithBeerLogo.png" alt="DEER_WITH_BEER">
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">DEER_WITH_BEER</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+            <!-- MURDER_SHOW -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <div class="media-text-card" style="background:#1a0505; border:1px solid rgba(255,80,80,0.2);">
+                        <div class="tc-label" style="color:rgba(255,80,80,0.4);">MURDER_SHOW.exe</div>
+                        <div class="tc-title" style="color:#ff5050;">MURDER<br>SHOW</div>
+                        <div class="tc-sub" data-i18n="art-pending-short">// art not ready</div>
+                    </div>
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">MURDER_SHOW</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+            <!-- ADVENTURE_SKY -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <div class="media-text-card" style="background:#04121a; border:1px solid rgba(80,200,255,0.2);">
+                        <div class="tc-label" style="color:rgba(80,200,255,0.4);">ADVENTURE_SKY.exe</div>
+                        <div class="tc-title" style="color:#50c8ff;">ADVENTURE<br>SKY</div>
+                        <div class="tc-sub" data-i18n="art-pending-short">// art not ready</div>
+                    </div>
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">ADVENTURE_SKY</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+            <!-- CURSED_PERSECUTOR -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <div class="media-text-card" style="background:#0e0515; border:1px solid rgba(180,80,255,0.2);">
+                        <div class="tc-label" style="color:rgba(180,80,255,0.4);">CURSED_PERSECUTOR.exe</div>
+                        <div class="tc-title" style="color:#b450ff; font-size:20px;">CURSED<br>PERSECUTOR</div>
+                        <div class="tc-sub" data-i18n="art-pending-short">// art not ready</div>
+                    </div>
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">CURSED_PERSECUTOR</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+            <!-- DEVASTATION -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <div class="media-text-card" style="background:#150505; border:1px solid rgba(220,40,40,0.2);">
+                        <div class="tc-label" style="color:rgba(220,40,40,0.4);">DEVASTATION.exe</div>
+                        <div class="tc-title" style="color:#dc2828;">DEVASTA<br>TION</div>
+                        <div class="tc-sub">// blood_candy · ldr</div>
+                    </div>
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">DEVASTATION</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+            <!-- BARRELLINA -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <div class="media-text-card" style="background:#141005; border:1px solid rgba(220,180,40,0.2);">
+                        <div class="tc-label" style="color:rgba(220,180,40,0.4);">BARRELLINA.exe</div>
+                        <div class="tc-title" style="color:#dcb428;">BARREL<br>LINA</div>
+                        <div class="tc-sub">// blood_candy · ldr</div>
+                    </div>
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">BARRELLINA</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+            <!-- PROJECT_BLUE -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <div class="media-text-card" style="background:#030d18; border:1px solid rgba(40,100,220,0.2);">
+                        <div class="tc-label" style="color:rgba(40,100,220,0.4);">PROJECT_BLUE.exe</div>
+                        <div class="tc-title" style="color:#2864dc;">PROJECT<br>BLUE</div>
+                        <div class="tc-sub">// blood_candy · ldr</div>
+                    </div>
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">PROJECT_BLUE</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+            <!-- ROW -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <img src="img/projects/row/rowLogoPackage.png" alt="ROW">
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">ROW</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+            <!-- RUINED_EARTH -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <div class="media-text-card" style="background:#0d0e08; border:1px solid rgba(140,160,60,0.2);">
+                        <div class="tc-label" style="color:rgba(140,160,60,0.4);">RUINED_EARTH.exe</div>
+                        <div class="tc-title" style="color:#8ca03c;">RUINED<br>EARTH</div>
+                        <div class="tc-sub">// blood_candy</div>
+                    </div>
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">RUINED_EARTH</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+            <!-- HARD_CORE -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <img src="img/projects/hardCore/hardCoreLogoPackage2.png" alt="HARD_CORE">
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">HARD_CORE</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+            <!-- INSTABILITY -->
+            <a href="#" class="media-card">
+                <div class="media-card-frame">
+                    <div class="media-text-card" style="background:#050508; border:1px solid rgba(100,80,200,0.2);">
+                        <div class="tc-label" style="color:rgba(100,80,200,0.4);">INSTABILITY.exe</div>
+                        <div class="tc-title" style="color:#6450c8;">INSTA<br>BILITY</div>
+                        <div class="tc-sub" data-i18n="bc-final">// blood_candy · final</div>
+                    </div>
+                </div>
+                <div class="media-card-label">
+                    <div class="media-card-name">INSTABILITY</div>
+                    <div class="media-card-status media-status-idea" data-i18n="badge-idea">Idea</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- JOIN -->
+<section class="section" id="join">
+    <div class="section-tag">// 参加する · <span data-i18n="join-tag-word">join</span></div>
+    <h2 class="section-title">Join CAS</h2>
+    <div class="join-wrap">
+        <div class="join-info">
+            <p style="font-family:var(--mono); font-size:13px; color:var(--text-3); line-height:1.8;" data-i18n="join-desc">
+                Looking for: developers, artists, narrative designers, sound designers.<br>
+                // Dev stack: Unity 6 · Git &amp; GitLab · C#<br>
+                // Art stack: Aseprite · Blender
+            </p>
+            <ul class="join-perks">
+                <li data-i18n="join-perk-1">real projects from day one</li>
+                <li data-i18n="join-perk-2">proper git-workflow</li>
+                <li>本当にこれを翻訳することに興味がありますか？</li>
+                <li data-i18n="join-perk-4">long-term · 長期的</li>
+            </ul>
+        </div>
+        <form class="join-form" action="https://formspree.io/f/mnnvqkpe" method="POST">
+            <div class="form-field">
+                <label for="name">// name</label>
+                <input type="text" id="name" name="name" placeholder="username" required>
             </div>
-        </section>
-
-        <section class="join-form">
-            <h2>Присоединяйтесь к нам</h2>
-            <form action="https://formspree.io/f/mnnvqkpe" method="POST">
-                <div class="form-group">
-                    <label for="name">Имя:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Почему вы хотите присоединиться к нам:</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <input type="hidden" name="_subject" value="Заявка на вступление в команду">
-                <input type="hidden" name="_next" value="https://crazyanimalsstudio.space/index.html">
-                <button type="submit" class="submit-btn">Отправить заявку</button>
-            </form>
-        </section>
-
-        <section class="social-links">
-            <h2>Мы в социальных сетях</h2>
-            <div class="social-grid">
-                <a href="https://github.com/CrazyAnimalsStudio" class="social-item">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://github.com/HologramAlice" class="social-item">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub Account</span>
-                </a>
-                <a href="https://dtf.ru/u/528485-crazy-animals-studio" class="social-item">
-                    <i class="fas fa-book"></i>
-                    <span>DTF</span>
-                </a>
-                <a href="https://t.me/CrazyAnimalsStudio" class="social-item">
-                    <i class="fab fa-telegram"></i>
-                    <span>Telegram Channel</span>
-                </a>
-                <a href="https://www.youtube.com/@crazyAnimalsStudio" class="social-item">
-                    <i class="fab fa-youtube"></i>
-                    <span>YouTube</span>
-                </a>
+            <div class="form-field">
+                <label for="email">// email</label>
+                <input type="email" id="email" name="email" placeholder="user@domain.tld" required>
             </div>
-        </section>
-    </main>
+            <div class="form-field">
+                <label for="message">// message</label>
+                <textarea id="message" name="message" data-i18n-placeholder="join-placeholder" placeholder="What you do. What you know. Why here." required></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="[CAS] Join Request">
+            <button type="submit" class="btn-primary" style="align-self:flex-start;">send_request()</button>
+        </form>
+    </div>
+</section>
 
-    <footer>
-        <p>Crazy.studio.cat@gmail.com</p>
-        <p>&copy; 2026 Crazy Animals Studio. </p>
-    </footer>
+<!-- SOCIALS -->
+<section class="section" style="padding-top:0; border-top:none;">
+    <div class="socials-grid">
+        <a href="https://github.com/CrazyAnimalsStudio" target="_blank" class="social-link">
+            <div class="social-icon" style="font-family:var(--mono); font-size:14px;">gh</div>
+            <div class="social-name">GitHub</div>
+            <div class="social-handle">@CrazyAnimalsStudio</div>
+        </a>
+        <a href="https://t.me/CrazyAnimalsStudio" target="_blank" class="social-link">
+            <div class="social-icon">✈</div>
+            <div class="social-name">Telegram</div>
+            <div class="social-handle">@CrazyAnimalsStudio</div>
+        </a>
+        <a href="https://www.youtube.com/@crazyAnimalsStudio" target="_blank" class="social-link">
+            <div class="social-icon">▶</div>
+            <div class="social-name">YouTube</div>
+            <div class="social-handle">@crazyAnimalsStudio</div>
+        </a>
+        <a href="https://dtf.ru/u/528485-crazy-animals-studio" target="_blank" class="social-link">
+            <div class="social-icon">◈</div>
+            <div class="social-name">DTF</div>
+            <div class="social-handle">Crazy Animals Studio</div>
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">CAS · Crazy Animals Studio · 狂った動物スタジオ</div>
+    <a href="mailto:crazy.studio.cat@gmail.com" class="footer-email">crazy.studio.cat@gmail.com</a>
+    <div class="footer-copy" data-i18n="footer-copy">© 2026 · Saint Petersburg</div>
+</footer>
+
+<script src="script.js"></script>
 </body>
-</html> 
+</html>
