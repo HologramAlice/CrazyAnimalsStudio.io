@@ -166,6 +166,24 @@ nav {
 
 .nav-links a:hover { color: var(--text); }
 
+.nav-bgdlib-btn {
+    font-family: var(--mono) !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #ea027e !important;
+    text-decoration: none;
+    border: 1px solid rgba(234,2,126,0.45);
+    padding: 5px 13px;
+    letter-spacing: 0.08em;
+    transition: background 0.18s, color 0.18s, border-color 0.18s;
+    white-space: nowrap;
+}
+.nav-bgdlib-btn:hover {
+    background: rgba(234,2,126,0.12) !important;
+    border-color: #ea027e !important;
+    color: #ff2d9b !important;
+}
+
 .nav-cta {
     font-family: var(--mono);
     font-size: 12px;
